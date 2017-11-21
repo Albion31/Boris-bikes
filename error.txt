@@ -1,0 +1,9 @@
+NameError: uninitialized constant DockingStation
+	from (irb):2
+	from /Users/lan/.rvm/rubies/ruby-2.4.1/bin/irb:11:in `<main>'
+
+The error type is a constant error. A constant represents a class within Ruby.
+The file path where the error happened is /Users/lan/.rvm/rubies/ruby-2.4.1/bin/irb
+The error happened on line 2
+The error means that the DockingStation class has not been defined.
+We need to define the class DockingStation
