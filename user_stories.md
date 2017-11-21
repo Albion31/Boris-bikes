@@ -25,3 +25,12 @@ As a person | I'd like to see if a bike is working so I can use a good bike
 As a bike | I need to be working
 As a docking station | I need be able to release a bike
 
+**Objects communicating with one another**
+
+person --request bike--> docking station --check if bike available --> bike
+bike --is available?--> YES --check if working?--YES-->release bike-->Docking station
+                                                 --NO-->don't release bike/call repair-->Docking station
+                        NO -->don't release bike-->docking station
+       
+
+
