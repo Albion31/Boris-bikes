@@ -1,4 +1,4 @@
-# require "bike"
+require "bike"
 
 describe Bike do
   # it "should be working" do
