@@ -1,7 +1,7 @@
 require "docking_station"
 describe DockingStation do
-    it "should release bike when bike is requested" do
-        docking_station = DockingStation.new
-        expect(docking_station.release_bike).to eq "Bike released."
-    end
+  it 'has a method called release_bike' do
+    docking_station = DockingStation.new
+    expect(docking_station).to respond_to(:release_bike)
+  end
 end
