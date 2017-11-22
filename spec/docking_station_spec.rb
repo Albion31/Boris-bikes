@@ -1,4 +1,5 @@
 require "docking_station"
+
 describe DockingStation do
   #test with basic structure
   # it 'has a method called release_bike' do
