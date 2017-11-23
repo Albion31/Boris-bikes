@@ -4,7 +4,7 @@ require "bike"
 describe DockingStation do
 
   it { is_expected.to respond_to :release_bike}
-  
+
   it 'should get a bike' do
     bike = Bike.new
     expect(bike).to be_working
@@ -20,7 +20,7 @@ describe DockingStation do
   end
 
   it "should not accept more bikes than its capacity" do
-    20.times{subject.dock(Bike.new)}
+    DockingStation::DEFAULT_CAPACITY.times{subject.dock(Bike.new)}
     expect {subject.dock(Bike.new)}.to raise_error("There are no capacity")
   end
 end
