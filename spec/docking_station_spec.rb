@@ -23,4 +23,14 @@ describe DockingStation do
     DockingStation::DEFAULT_CAPACITY.times{subject.dock(Bike.new)}
     expect {subject.dock(Bike.new)}.to raise_error("There are no capacity")
   end
+
+  it "should be able to change capacity when necessary" do
+    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+  end
+
+  it "should be able to set a different capacity" do
+    docking_station = DockingStation.new(100)
+    expect(docking_station.capacity).to eq 100
+  end
+
 end
