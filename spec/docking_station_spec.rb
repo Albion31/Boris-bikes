@@ -25,11 +25,11 @@ describe DockingStation do
   end
 
   # docked_bike method
-  it 'returns docked bikes' do
-    bike = Bike.new
-    subject.dock(bike)
-    expect(subject.dock(bike)).to eq(bike)
-  end
+  # it 'shows if bikes are docked' do
+  #   bike = Bike.new
+  #   subject.dock(bike)
+  #   expect(subject.dock(bike)).to eq(bike)
+  # end
 
   it "should not release bike when there are none available" do
     # bike = Bike.new
@@ -37,6 +37,12 @@ describe DockingStation do
     # # expect(subject.dock(newbike)).to be_a Array
     # expect(subject.release_bike).to eq(bike)
     expect { subject.release_bike }.to raise_error("There are no bikes available")
+  end
+
+  it "should not accept more bikes than its capacity" do
+    bike = Bike.new
+    subject.dock(bike)
+    expect {subject.dock(bike)}.to raise_error("There are no capacity")
   end
 
 end

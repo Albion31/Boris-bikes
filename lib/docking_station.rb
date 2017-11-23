@@ -15,6 +15,7 @@ attr_reader :bike
   end
 
   def dock(bike)
+    raise "There are no capacity" if @bike
     @bike = bike
   end
 
