@@ -20,6 +20,7 @@ attr_accessor :capacity
 
   def release_bike
     raise "There are no bikes available" if empty?
+    raise "Bike cannot be released as broken" if @docking_station[-1].working? == false
     @docking_station.pop
   end
 
