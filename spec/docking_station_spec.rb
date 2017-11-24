@@ -26,11 +26,24 @@ describe DockingStation do
 
   it "should be able to change capacity when necessary" do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+    expect(subject.capacity = 30).to eq 30
   end
 
   it "should be able to set a different capacity" do
     docking_station = DockingStation.new(100)
     expect(docking_station.capacity).to eq 100
+  end
+
+  it "should accept broken bikes" do
+    bike = Bike.new
+    subject.dock(bike, false)
+    expect(bike.working?).to eq false
+  end
+
+  it "should accept working bike without and argument" do
+    bike = Bike.new
+    subject.dock(bike)
+    expect(bike.working?).to eq true
   end
 
 end

@@ -12,8 +12,9 @@ attr_accessor :capacity
     @capacity = capacity
   end
 
-  def dock(bike)
+  def dock(bike, report = true)
     raise "There are no capacity" if full?
+    bike.set_working = report
     @docking_station << bike
   end
 
